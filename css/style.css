@@ -1,3 +1,60 @@
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px; /* Jarak dari bawah */
+    right: 20px; /* Jarak dari kanan */
+    z-index: 1000; /* Agar di atas elemen lain */
+    width: 60px; /* Ukuran tombol */
+    height: 60px; /* Ukuran tombol */
+    background-color: #25d366; /* Warna hijau WhatsApp */
+    border-radius: 50%; /* Membuat tombol berbentuk bulat */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Memberikan bayangan */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek hover */
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1); /* Sedikit membesar saat dihover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Tambah bayangan saat hover */
+  }
+  
+  .whatsapp-icon {
+    width: 35px; /* Ukuran logo */
+    height: 35px; /* Ukuran logo */
+    object-fit: cover; /* Menjaga proporsi logo */
+  }
+  
+  /* Tooltip Styling */
+  .whatsapp-float::after {
+    content: attr(data-tooltip); /* Mengambil teks dari atribut data-tooltip */
+    position: absolute;
+    left: -150px; /* Posisikan tooltip di kiri tombol */
+    top: 50%; /* Posisikan secara vertikal di tengah */
+    transform: translateY(-50%); /* Sesuaikan posisinya */
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap; /* Cegah teks menjadi dua baris */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  /* Tampilkan tooltip saat hover */
+  .whatsapp-float:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  .car-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6600; /* Bright color for visibility */
+    margin: 8px 0;
+  }
 /* Google Fonts */
 body{
     background-color: #231F20; /* Black Background */
@@ -255,9 +312,12 @@ h2{
 
 /* Layanan Section */
 .services-section {
-    background-color: #231F20;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    background-image: url("images/Background/indonesia-1920-x-1080-background-fn3t7otb0p53rqae.jpg"); /* Ganti dengan URL gambar Anda */
+    background-size: cover; /* Gambar akan menutupi seluruh area */
+    background-position: center; /* Pusatkan gambar */
+    color: white; /* Teks berwarna putih untuk kontras */
+    padding: 2rem 0; /* Tambahkan ruang atas dan bawah */
+    position: relative; /* Untuk overlay */
 }
 
 .services-section h2 {
@@ -293,6 +353,55 @@ h2{
     transform: scale(1.05);
 }
 
+/* Call-to-Action Section */
+.call-to-action {
+    background: url('your-image-path.jpg') no-repeat center center/cover; /* Ganti 'your-image-path.jpg' dengan path gambar Anda */
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  }
+  
+  .call-to-action::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay warna hitam transparan */
+    z-index: 1;
+  }
+  
+  .cta-content {
+    position: relative;
+    z-index: 2;
+    color: #fff; /* Teks putih */
+  }
+  
+  .cta-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #ff0000; /* Warna tombol merah */
+    color: #fff; /* Teks putih */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ff6666; /* Warna tombol saat hover */
+  }
+  
 /* Gallery Section */
 #gallery {
     background-color: #FFFFFF; /* Black Background */
@@ -358,21 +467,39 @@ h2{
 
 /* Card Styling 2*/
 .car-card {
-    background-color: #231F20; /* Black Card Background */
-    border: none;
+    border: 1px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .car-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
   
   .car-card-img-top {
     width: 100%;
-    height: auto;
+    height: 300px;
+    
     border-bottom: 1px solid #ddd;
+  }
+  
+  .car-card-body {
+    padding: 1rem;
   }
   
   .car-card-title {
     font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .car-card-body ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
   }
   
   .car-card-body ul li {
@@ -388,6 +515,115 @@ h2{
   
   .btn-warning:hover {
     background-color: #e06400;
+  }
+  
+  /* Section Styling */
+.tour-packages {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #231F20; /* Warna latar belakang hitam */
+    color: #fff; /* Warna teks putih */
+  }
+  
+  .tour-packages h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff; /* Judul tetap putih */
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: #ffcc00; /* Warna subtitle kuning */
+  }
+  
+  .divider {
+    width: 50px;
+    border: 2px solid #ffcc00; /* Divider kuning */
+    margin: 10px auto 20px;
+  }
+  
+  /* Tabs Styling */
+  .destination-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .tab-button {
+    background: transparent;
+    border: 1px solid #ffcc00; /* Border kuning */
+    color: #ffcc00; /* Teks kuning */
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .tab-button:hover,
+  .tab-button.active {
+    background-color: #ffcc00; /* Latar kuning saat hover/aktif */
+    color: #000; /* Teks hitam saat hover/aktif */
+  }
+  
+  /* Package Details Styling */
+  .package-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .package-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Bayangan putih */
+  }
+  
+  .details {
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  .details h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Judul kuning */
+  }
+  
+  .details p {
+    font-size: 14px;
+    color: #fff; /* Teks putih */
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ffcc00; /* Tombol kuning */
+    color: #000; /* Teks hitam */
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .read-more:hover {
+    background-color: #fff; /* Tombol putih saat hover */
+    color: #000; /* Teks hitam saat hover */
   }
   
 
@@ -589,4 +825,6 @@ h2{
         font-size: 1rem;
         padding: 0.6rem 1.5rem;
     }
+
+
 }
