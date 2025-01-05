@@ -355,7 +355,7 @@ h2{
 
 /* Call-to-Action Section */
 .call-to-action {
-    background: url('your-image-path.jpg') no-repeat center center/cover; /* Ganti 'your-image-path.jpg' dengan path gambar Anda */
+    background: url('images/Foto tempat wisata/Join us.png') no-repeat center center/cover; /* Ganti 'your-image-path.jpg' dengan path gambar Anda */
     height: 400px;
     display: flex;
     align-items: center;
