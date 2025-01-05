@@ -402,6 +402,7 @@ h2{
     background-color: #ff6666; /* Warna tombol saat hover */
   }
   
+  
 /* Gallery Section */
 #gallery {
     background-color: #FFFFFF; /* Black Background */
@@ -517,29 +518,40 @@ h2{
     background-color: #e06400;
   }
   
+  /* Root Variables */
+:root {
+    --primary-color3: #ffcc00; /* Warna kuning utama */
+    --secondary-color3: #231F20; /* Warna hitam latar belakang */
+    --background-color3: #000000; /* Warna latar belakang tambahan */
+    --text-color3: #ffffff; /* Warna teks putih */
+    --heading-color3: #ffcc00; /* Warna judul kuning */
+    --btn-hover-color3: #ffffff; /* Warna tombol hover putih */
+    --btn-text-hover-color3: #000000; /* Warna teks tombol saat hover hitam */
+  }
+  
   /* Section Styling */
-.tour-packages {
+  .tour-packages {
     text-align: center;
     padding: 50px 20px;
-    background-color: #231F20; /* Warna latar belakang hitam */
-    color: #fff; /* Warna teks putih */
+    background-color: var(--secondary-color3); /* Warna latar belakang hitam */
+    color: var(--text-color3); /* Warna teks putih */
   }
   
   .tour-packages h2 {
     font-size: 36px;
     font-weight: bold;
-    color: #fff; /* Judul tetap putih */
+    color: var(--text-color3); /* Judul tetap putih */
     margin-bottom: 10px;
   }
   
   .subtitle {
     font-size: 18px;
-    color: #ffcc00; /* Warna subtitle kuning */
+    color: var(--primary-color3); /* Warna subtitle kuning */
   }
   
   .divider {
     width: 50px;
-    border: 2px solid #ffcc00; /* Divider kuning */
+    border: 2px solid var(--primary-color3); /* Divider kuning */
     margin: 10px auto 20px;
   }
   
@@ -552,8 +564,8 @@ h2{
   
   .tab-button {
     background: transparent;
-    border: 1px solid #ffcc00; /* Border kuning */
-    color: #ffcc00; /* Teks kuning */
+    border: 1px solid var(--primary-color3); /* Border kuning */
+    color: var(--primary-color3); /* Teks kuning */
     border-radius: 15px;
     padding: 10px 20px;
     margin: 0 5px;
@@ -564,10 +576,10 @@ h2{
   
   .tab-button:hover,
   .tab-button.active {
-    background-color: #ffcc00; /* Latar kuning saat hover/aktif */
-    color: #000; /* Teks hitam saat hover/aktif */
+    background-color: var(--primary-color3); /* Latar kuning saat hover/aktif */
+    color: var(--btn-text-hover-color3); /* Teks hitam saat hover/aktif */
   }
-  
+ 
   /* Package Details Styling */
   .package-details {
     display: flex;
@@ -590,7 +602,16 @@ h2{
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Bayangan putih */
   }
-  
+
+  .package-image-large {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    grid-column: span 2; /* Membuat gambar ini memanjang ke bawah */
+  }
+
   .details {
     max-width: 600px;
     text-align: left;
@@ -599,12 +620,12 @@ h2{
   .details h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #ffcc00; /* Judul kuning */
+    color: var(--primary-color3); /* Judul kuning */
   }
   
   .details p {
     font-size: 14px;
-    color: #fff; /* Teks putih */
+    color: var(--text-color3); /* Teks putih */
     margin-bottom: 10px;
     line-height: 1.6;
   }
@@ -613,8 +634,8 @@ h2{
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: #ffcc00; /* Tombol kuning */
-    color: #000; /* Teks hitam */
+    background-color: var(--primary-color3); /* Tombol kuning */
+    color: var(--btn-text-hover-color3); /* Teks hitam */
     text-decoration: none;
     font-size: 14px;
     border-radius: 5px;
@@ -622,9 +643,11 @@ h2{
   }
   
   .read-more:hover {
-    background-color: #fff; /* Tombol putih saat hover */
-    color: #000; /* Teks hitam saat hover */
+    background-color: var(--btn-hover-color3); /* Tombol putih saat hover */
+    color: var(--btn-text-hover-color3); /* Teks hitam saat hover */
   }
+  
+    
   
 
 /* Registered With Section */
